@@ -1,0 +1,167 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: red;
+  background-color: black;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.container {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+/* Header & Nav */
+header {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 24px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav a.active,
+nav a:hover {
+  border-bottom: 2px solid #fff;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+/* Content Sections */
+.content-section {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+}
+.content-section:nth-child(even) {
+  background: #222;
+}
+.content-section .carousel {
+  flex: 1 1 500px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+.carousel-img {
+  min-width: 100%;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel-img.active {
+  display: block;
+}
+.content-section div {
+  flex: 1 1 400px;
+  padding: 20px;
+  color: white;
+}
+
+/* Social Links */
+.social-links {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social-links a {
+  color: white;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.social-links a:hover {
+  background-color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero-text {
+    font-size: 14px;
+  }
+}
